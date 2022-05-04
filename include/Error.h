@@ -10,5 +10,6 @@ namespace Cube::Error {
   void check();
   void view_all();
   
+  [[noreturn]]
   void crash();
 }

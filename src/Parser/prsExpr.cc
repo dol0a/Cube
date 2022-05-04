@@ -6,7 +6,15 @@ namespace Cube {
   AST::Base* Parser::primary() {
     
     switch( cur->kind ) {
+      case TOK_INT: {
+        auto x = new AST::Value();
 
+        x->token = cur;
+        x->val_int = std::stoi(std::wstring(cur->str));
+
+        next();
+        return x;
+      }
     }
 
     Error::append(cur, "invalid syntax");
@@ -14,11 +22,27 @@ namespace Cube {
   }
 
   AST::Base* Parser::mul() {
-    
+    auto x = primary();
+
+    while( check() ) {
+      if( eat(L"*") ) x = new AST::Expr(AST_MUL, x, primary(), ate);
+      else if( eat(L"/") ) x = new AST::Expr(AST_DIV, x, primary(), ate);
+      else break;
+    }
+
+    return x;
   }
 
   AST::Base* Parser::add() {
-    
+    auto x = mul();
+
+    while( check() ) {
+      if( eat(L"+") ) x = new AST::Expr(AST_ADD, x, mul(), ate);
+      else if( eat(L"-") ) x = new AST::Expr(AST_SUB, x, mul(), ate);
+      else break;
+    }
+
+    return x;
   }
 
 }

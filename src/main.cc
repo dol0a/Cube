@@ -44,7 +44,10 @@ int main(int argc, char** argv) {
 
   auto token = lexer.lex();
 
-  Parser parser{}
+  Parser parser{ token };
 
+  auto ast = parser.parse();
+
+  
 
 }

@@ -1,6 +1,6 @@
 #pragma once
 
-namespace Cube::AST {
+namespace Cube {
   enum ASTKind {
     AST_VALUE,
     AST_VARIABLE,
