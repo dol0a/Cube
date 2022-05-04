@@ -7,8 +7,11 @@ namespace Cube {
   
   enum AsmOpKind {
     ASM_MOV,
+    ASM_MOVI,
 
     ASM_ADD,
+
+    ASM_ADDI,
   };
 
   struct AsmOperand {
@@ -17,5 +20,15 @@ namespace Cube {
     int regSrc;
     
     Object* object;
+
+    std::string toString() const;
+
+    AsmOperand(AsmOpKind kind, int ra, int rb)
+      : kind(kind),
+        regDest(ra),
+        regSrc(rb),
+        object(nullptr)
+    {
+    }
   };
 }

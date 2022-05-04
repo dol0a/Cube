@@ -9,8 +9,10 @@ namespace Cube {
       case TOK_INT: {
         auto x = new AST::Value();
 
+        auto obj = new ObjLong(std::stoi(std::wstring(cur->str)));
+
         x->token = cur;
-        x->val_int = std::stoi(std::wstring(cur->str));
+        x->value = obj;
 
         next();
         return x;

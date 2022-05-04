@@ -11,7 +11,7 @@ namespace Cube {
     switch( ast->kind ) {
       case AST_VALUE: {
         switch( ast->token->kind ) {
-          case TOK_INT: ret = TYPE_INT; break;
+          case TOK_INT: ret = TYPE_LONG; break;
         }
 
         break;
