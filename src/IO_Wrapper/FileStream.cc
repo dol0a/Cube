@@ -1,4 +1,5 @@
 #include <string>
+#include "Utils.h"
 #include "IO_Wrapper/FileStream.h"
 
 namespace Cube::IO_Wrapper {
@@ -26,14 +27,19 @@ namespace Cube::IO_Wrapper {
 
   std::wstring FileReader::read_line() {
     std::string tmp;
-    
+
+    if( std::getline(*ifs, tmp) ) {
+      return Utils::Converter::to_wstring(tmp);
+    }
+
+    return L"";
   }
 
   std::wstring FileReader::read_all() {
-
+    return L"";
   }
 
   std::vector<std::wstring> FileReader::read_all_lines() {
-
+    return { };
   }
 }
