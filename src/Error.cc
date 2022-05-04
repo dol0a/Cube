@@ -40,11 +40,23 @@ namespace Cube::Error {
   }
 
   void append(AST::Base* ast, char const* fmt, ...) {
-
+    append(ast->token, "append with AST not yet implemented");
   }
 
   void check() {
     if( ctx_list.size() >= ERRLIST_MAX_SIZE ) {
+      view_all();
+      
+      std::cerr
+        << std::endl
+        << "compiler crashed due to previous many errors" << std::endl;
+
+      crash();
+    }
+  }
+
+  void check_strict() {
+    if( !ctx_list.empty() ) {
       view_all();
       crash();
     }

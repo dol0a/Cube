@@ -12,6 +12,7 @@ SOURCE	:= src \
 	src/IO_Wrapper \
 	src/Lexer \
 	src/Parser \
+	src/Types \
 	src/Utils \
 	src/VM
 

@@ -11,6 +11,7 @@
 #include "Utils.h"
 #include "IO_Wrapper.h"
 #include "SourceRef.h"
+#include "Error.h"
 
 using namespace Cube;
 
@@ -48,6 +49,11 @@ int main(int argc, char** argv) {
 
   auto ast = parser.parse();
 
+  Evaluater eval;
+
+  eval.eval(ast);
+
+  Error::check();
   
 
 }

@@ -8,6 +8,8 @@ namespace Cube::Error {
   void append(AST::Base* ast, char const* fmt, ...);
 
   void check();
+  void check_strict();
+  
   void view_all();
   
   [[noreturn]]
