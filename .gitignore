@@ -1,0 +1,13 @@
+/build
+/gomi
+
+*.txt
+*.out
+*.o
+*.d
+
+chang
+cube
+
+test.*
+memo.*
