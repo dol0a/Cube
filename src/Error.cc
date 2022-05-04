@@ -11,21 +11,30 @@ namespace Cube::Error {
     size_t viewBegin, viewEnd;
     size_t errBegin, errEnd;
 
+    std::string message;
+
     void print() const {
-      printf("");
+      printf("pos=%zu: %s\n", errBegin, message.c_str());
     }
   };
 
   namespace {
     std::vector<ErrorContext> ctx_list;
+    char buf[0x1000];
   }
 
   void append(Token* token, char const* fmt, ...) {
     ErrorContext ctx = { 0 };
 
+    va_list ap;
+    va_start(ap, fmt);
+    vsprintf(buf, fmt, ap);
+    va_end(ap);
+
     ctx.srcref = token->src;
     ctx.errBegin = token->pos;
     ctx.errEnd = token->pos + token->str.length();
+    ctx.message = buf;
 
     ctx_list.emplace_back(ctx);
   }

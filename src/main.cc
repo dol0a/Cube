@@ -1,5 +1,7 @@
 #include <iostream>
 
+#include "AST.h"
+
 #include "Lexer.h"
 #include "Parser.h"
 #include "Evaluater.h"
@@ -26,14 +28,23 @@ int test() {
   return 0;
 }
 
+void printToken(Token* token) {
+  for( auto t = token; t->kind != TOK_END; t = t->next ) {
+    std::cout << Utils::Converter::to_string(t->str) << std::endl;
+  }
+}
+
 int main(int argc, char** argv) {
   
   IO_Wrapper::FileReader reader("test.txt");
 
   auto const&& src = reader.read_all();
 
-  
+  Lexer lexer{ src };
 
+  auto token = lexer.lex();
+
+  Parser parser{}
 
 
 }

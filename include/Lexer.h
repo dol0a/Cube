@@ -2,6 +2,7 @@
 
 namespace Cube {
   struct Token;
+  class SourceRef;
 
   class Lexer {
     SourceRef* srcref;

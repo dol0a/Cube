@@ -10,4 +10,12 @@ namespace Utils::Converter {
   std::wstring to_wstring(std::string const& str) {
     return conv.from_bytes(str);
   }
+
+  std::string to_string(std::wstring const& str) {
+    return conv.to_bytes(str);
+  }
+
+  std::string to_string(std::wstring_view const& str) {
+    return conv.to_bytes(std::wstring(str));
+  }
 }
