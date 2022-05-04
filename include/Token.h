@@ -1,5 +1,7 @@
 #pragma once
 
+#include <string>
+
 namespace Cube {
   enum TokenKind {
     TOK_INT,
@@ -11,17 +13,21 @@ namespace Cube {
     TOK_END
   };
 
+  class SourceRef;
   struct Token {
     TokenKind kind;
     Token* prev;
     Token* next;
     size_t pos;
     std::wstring_view str;
+    SourceRef* src;
 
     Token(TokenKind kind)
       : kind(kind),
         prev(nullptr),
-        next(nullptr)
+        next(nullptr),
+        pos(0),
+        src(nullptr)
     {
     }
 

@@ -4,6 +4,8 @@ namespace Cube {
   struct Token;
 
   class Lexer {
+    SourceRef* srcref;
+
     std::wstring const& source;
     size_t position;
 

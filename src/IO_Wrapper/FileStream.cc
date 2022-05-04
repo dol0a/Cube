@@ -23,23 +23,43 @@ namespace Cube::IO_Wrapper {
   bool FileReader::open(std::string const& path) {
     ifs->open(path);
     _isOpened = true;
+
+    return ifs->is_open();
   }
 
-  std::wstring FileReader::read_line() {
+  bool FileReader::read_line(std::wstring& out) {
     std::string tmp;
 
     if( std::getline(*ifs, tmp) ) {
-      return Utils::Converter::to_wstring(tmp);
+      out = Utils::Converter::to_wstring(tmp);
+      return true;
     }
 
-    return L"";
+    return false;
   }
 
   std::wstring FileReader::read_all() {
-    return L"";
+    std::string str;
+
+    constexpr auto bufferSize = 1024;
+    char buf[bufferSize];
+
+    while( !ifs->eof() ) {
+      ifs->read(buf, bufferSize);
+      str.append(buf, ifs->gcount());
+    }
+
+    return Utils::Converter::to_wstring(str);
   }
 
   std::vector<std::wstring> FileReader::read_all_lines() {
-    return { };
+    std::vector<std::wstring> ret;
+    std::wstring tmp;
+
+    while( read_line(tmp) ) {
+      ret.emplace_back(tmp);
+    }
+
+    return ret;
   }
 }

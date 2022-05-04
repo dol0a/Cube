@@ -1,11 +1,14 @@
 #pragma once
 
 #include <cstdarg>
+#include "AST.h"
 
 namespace Cube::Error {
-  struct Token;
-  namespace AST { struct Base; }
-
   void append(Token* token, char const* fmt, ...);
   void append(AST::Base* ast, char const* fmt, ...);
+
+  void check();
+  void view_all();
+  
+  void crash();
 }

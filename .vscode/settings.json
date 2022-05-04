@@ -57,6 +57,7 @@
     "condition_variable": "cpp",
     "cstring": "cpp",
     "mutex": "cpp",
-    "cinttypes": "cpp"
+    "cinttypes": "cpp",
+    "map": "cpp"
   }
 }

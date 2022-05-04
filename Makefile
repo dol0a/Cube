@@ -7,10 +7,16 @@ LD	:= $(CXX)
 BUILD		:= build
 INCLUDE	:= include
 SOURCE	:= src \
-	src/Lexer
+	src/Compiler \
+	src/Evaluater \
+	src/IO_Wrapper \
+	src/Lexer \
+	src/Parser \
+	src/Utils \
+	src/VM
 
 COMMONFLAGS	:= -O1
-CFLAGS			:= $(COMMONFLAGS) $(INCLUDES) -Wno-switch
+CFLAGS			:= $(COMMONFLAGS) $(INCLUDES) -Wno-switch $(INCLUDES)
 CXXFLAGS		:= $(CFLAGS) -std=c++20
 LDFLAGS			:= -Wl,--gc-sections
 
@@ -26,7 +32,7 @@ ifneq ($(notdir $(CURDIR)), $(BUILD))
 
 export VPATH	= $(foreach dir,$(SOURCE),$(CURDIR)/$(dir))
 export OUTPUT	= $(CURDIR)/$(TARGET)
-export INCLUDES	= $(foreach dir,$(INCLUDE),$(CURDIR)/$(dir))
+export INCLUDES	= $(foreach dir,$(INCLUDE),-I$(CURDIR)/$(dir))
 
 CFILES		= $(notdir $(foreach dir,$(VPATH),$(wildcard $(dir)/*.c)))
 CXXFILES	= $(notdir $(foreach dir,$(VPATH),$(wildcard $(dir)/*.cc)))

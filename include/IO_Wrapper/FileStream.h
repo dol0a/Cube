@@ -16,7 +16,7 @@ namespace Cube::IO_Wrapper {
 
     bool open(std::string const& path);
 
-    std::wstring read_line();
+    bool read_line(std::wstring& out);
     std::wstring read_all();
     std::vector<std::wstring> read_all_lines();
   };
