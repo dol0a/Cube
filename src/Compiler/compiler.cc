@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Compiler.h"
 
 namespace Cube {
@@ -25,10 +26,21 @@ namespace Cube {
             asmAdd(reg, reg + 1);
             break;
           }
+
+          case AST_MUL: {
+            asmMul(reg, reg + 1);
+            break;
+          }
         }
 
         break;
       }
+    }
+  }
+
+  void Compiler::viewAll() {
+    for( auto&& Asm : oplist ) {
+      std::cout << Asm.toString() << std::endl;
     }
   }
 

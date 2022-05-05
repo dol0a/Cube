@@ -44,16 +44,22 @@ int main(int argc, char** argv) {
   Lexer lexer{ src };
 
   auto token = lexer.lex();
+  Error::check_strict();
 
   Parser parser{ token };
 
   auto ast = parser.parse();
+  Error::check_strict();
 
   Evaluater eval;
 
   eval.eval(ast);
+  Error::check_strict();
 
-  Error::check();
+  Compiler compiler;
+  compiler.compile(ast, 3);
+  Error::check_strict();
   
+  compiler.viewAll();
 
 }

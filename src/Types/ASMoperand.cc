@@ -16,6 +16,9 @@ namespace Cube {
       case ASM_ADD:
         return format("add r%d, r%d", regDest, regSrc);
 
+      case ASM_MUL:
+        return format("mul r%d, r%d", regDest, regSrc);
+
       case ASM_ADDI:
         return format("addi r%d, %s", regDest, object->toString().c_str());
     }

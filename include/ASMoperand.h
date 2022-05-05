@@ -10,6 +10,7 @@ namespace Cube {
     ASM_MOVI,
 
     ASM_ADD,
+    ASM_MUL,
 
     ASM_ADDI,
   };

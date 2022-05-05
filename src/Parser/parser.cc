@@ -1,3 +1,4 @@
+#include <cassert>
 #include "Parser.h"
 
 namespace Cube {
@@ -5,6 +6,7 @@ namespace Cube {
     : cur(token),
       ate(nullptr)
   {
+    assert(token != nullptr);
   }
 
   AST::Base* Parser::parse() {

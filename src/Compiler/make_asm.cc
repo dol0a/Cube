@@ -10,9 +10,12 @@ namespace Cube {
     
   }
 
-  void Compiler::asmAdd(u8 dest, u8 src) {
-    oplist.emplace_back(ASM_ADD, dest, src);
-    
+  void Compiler::asmAdd(u8 rA, u8 rB) {
+    oplist.emplace_back(ASM_ADD, rA, rB);
+  }
+
+  void Compiler::asmMul(u8 rA, u8 rB) {
+    oplist.emplace_back(ASM_MUL, rA, rB);
   }
 
   void Compiler::asmAddI(u8 rA, u8 rB, Object* val) {
