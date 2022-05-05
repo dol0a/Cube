@@ -5,6 +5,8 @@ namespace Cube {
     TypeInfo type;
     size_t refCount;
 
+    virtual std::string toString() const = 0;
+
   protected:
     Object()
       : type(TYPE_NONE),
