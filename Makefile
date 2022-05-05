@@ -7,6 +7,7 @@ LD	:= $(CXX)
 BUILD		:= build
 INCLUDE	:= include
 SOURCE	:= src \
+	src/Assembler \
 	src/Compiler \
 	src/Evaluater \
 	src/IO_Wrapper \

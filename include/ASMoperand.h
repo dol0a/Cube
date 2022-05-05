@@ -3,9 +3,9 @@
 #include <string>
 
 namespace Cube {
-  struct Object;
+  typedef uint8_t u8;
   
-  enum AsmOpKind {
+  enum AsmOpKind : u8 {
     ASM_MOV,
     ASM_MOVI,
 
@@ -15,10 +15,11 @@ namespace Cube {
     ASM_ADDI,
   };
 
+  struct Object;
   struct AsmOperand {
     AsmOpKind kind;
-    int regDest;
-    int regSrc;
+    u8 regDest;
+    u8 regSrc;
     
     Object* object;
 

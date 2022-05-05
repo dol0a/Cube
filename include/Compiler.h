@@ -25,5 +25,7 @@ namespace Cube {
 
     void viewAll();
 
+    std::vector<AsmOperand> const& get_oplist();
+
   };
 }

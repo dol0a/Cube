@@ -1,11 +1,12 @@
 #include <iostream>
 
-#include "AST.h"
+#include "dbg.h"
 
 #include "Lexer.h"
 #include "Parser.h"
 #include "Evaluater.h"
 #include "Compiler.h"
+#include "Assembler.h"
 #include "VM.h"
 
 #include "Utils.h"
@@ -61,5 +62,28 @@ int main(int argc, char** argv) {
   Error::check_strict();
   
   compiler.viewAll();
+
+  std::vector<u8> code;
+  
+alert;
+  std::cout << compiler.get_oplist().size() << std::endl;
+
+  Assembler assembler{ code, compiler.get_oplist() };
+
+  assembler.asm_full();
+
+  for( auto p = code.begin(); p != code.end(); p++ ) {
+    printf("%02X\n", *p);
+  }
+
+alert;
+
+  auto p1 = compiler.get_oplist()[0].object;
+  auto p2 = derefCode<Object*>(code[2]);
+
+  printf("%p\n", p1);
+  printf("%p\n", p2);
+
+  std::cout << p2->toString() << std::endl;
 
 }

@@ -44,4 +44,9 @@ namespace Cube {
     }
   }
 
+  std::vector<AsmOperand> const& Compiler::get_oplist() {
+    return this->oplist;
+  }
+  
+
 }
