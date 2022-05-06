@@ -19,7 +19,7 @@ namespace Cube {
   };
 
   template <class T>
-  auto derefCode(u8& p) {
+  auto derefCode(u8 const& p) {
     return *(T*)(&p);
   }
 }

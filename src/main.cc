@@ -61,17 +61,14 @@ int main(int argc, char** argv) {
   compiler.compile(ast, 3);
   Error::check_strict();
   
-  compiler.viewAll();
-
   std::vector<u8> code;
-  
-alert;
-  std::cout << compiler.get_oplist().size() << std::endl;
 
   Assembler assembler{ code, compiler.get_oplist() };
 
   assembler.asm_full();
+  Error::check_strict();
 
+/*
   for( auto p = code.begin(); p != code.end(); p++ ) {
     printf("%02X\n", *p);
   }
@@ -85,5 +82,11 @@ alert;
   printf("%p\n", p2);
 
   std::cout << p2->toString() << std::endl;
+  */
+
+  VM vm{ code };
+  vm.run();
+
+
 
 }
