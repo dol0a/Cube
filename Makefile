@@ -9,6 +9,7 @@ INCLUDE	:= include
 SOURCE	:= src \
 	src/Assembler \
 	src/Compiler \
+	src/Driver \
 	src/Evaluater \
 	src/IO_Wrapper \
 	src/Lexer \

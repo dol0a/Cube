@@ -4,6 +4,31 @@
 #include "SourceRef.h"
 #include "Error.h"
 
+static wchar_t const* reservedIdentifiers[] = {
+  L"fn",
+  L"if",
+  L"else",
+  L"true",
+  L"false",
+  L"switch",
+  L"case",
+  L"while",
+  L"for",
+  L"loop",
+  L"match",
+  L"int",
+  L"float",
+  L"bool",
+  L"char",
+  L"string",
+  L"tuple",
+  L"class",
+  L"struct",
+  L"namespace",
+  L"import",
+  L"new",
+};
+
 static wchar_t const* reservedTokens[] = {
   L"+",
   L"-",
@@ -35,11 +60,33 @@ namespace Cube {
       cur->src = srcref;
 
       if( isdigit(ch) ) {
-        cur->str = { str, count_num() };
+        cur->str = { str, len = count_num() };
+
+        if( peek() == L'.') {
+          for( position++; isdigit(peek()); position++, len++ );
+          cur->kind = TOK_FLOAT;
+          cur->str = { str, len };
+        }
       }
       else if( isalpha(ch) || ch == L'_' ) {
         cur->kind = TOK_IDENT;
         cur->str = { str, count_ident() };
+
+        for( auto&& s : reservedIdentifiers ) {
+          if( cur->str == s ) {
+            cur->kind = TOK_RESERVED;
+            break;
+          }
+        }
+      }
+      else if( ch == L'"' || ch == L'\'' ) {
+        cur->kind = ch == L'"' ? TOK_STRING : TOK_CHAR;
+        cur->str = { str, count_string(ch) };
+
+        if( cur->kind == TOK_CHAR && cur->str.length() > 1 ) {
+          Error::append(cur, "character literal is too long");
+          Error::crash();
+        }
       }
       else {
         for( std::wstring_view&& s : reservedTokens ) {

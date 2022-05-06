@@ -20,6 +20,8 @@ namespace Cube {
     AST::Base* mul();
     AST::Base* add();
 
+    AST::Function* func();
+
     AST::Base* parse();
   };
 }

@@ -13,6 +13,8 @@ namespace Cube {
     static void* jumpTable[] = {
       &&DO_MOV,
       &&DO_MOVI,
+      &&DO_CMP,
+      &&DO_CMPI,
       &&DO_ADD,
       &&DO_SUB,
       &&DO_MUL,
@@ -21,6 +23,8 @@ namespace Cube {
       &&DO_SUBI,
       &&DO_MULI,
       &&DO_DIVI,
+      &&DO_JUMP,
+      &&DO_CALL,
     };
 
     auto op = code.begin();
@@ -33,32 +37,36 @@ namespace Cube {
     auto kind = static_cast<AsmOpKind>(*op);
     goto *jumpTable[*op++];
 
-    DO_MOV:; {
+    DO_MOV: {
       reg[*op] = reg[*(++op)];
       op++;
       loopEnd;
     }
 
-    DO_MOVI:; {
+    DO_MOVI: {
       auto& dest = reg[*op++];
       dest = derefCode<Object*>(*op);
       op += sizeof(Object*);
       loopEnd;
     }
 
-    DO_ADD:;
-    DO_SUB:; 
-    DO_MUL:; 
-    DO_DIV:; {
+    DO_CMP:
+    DO_CMPI:
+      ;
+
+    DO_ADD:
+    DO_SUB:
+    DO_MUL:
+    DO_DIV: {
       calcObject(kind, reg[*op], reg[*(++op)]);
       op++;
       loopEnd;
     }
 
-    DO_ADDI:;
-    DO_SUBI:;
-    DO_MULI:;
-    DO_DIVI:; {
+    DO_ADDI:
+    DO_SUBI:
+    DO_MULI:
+    DO_DIVI: {
       calcObject(
           static_cast<AsmOpKind>(static_cast<u8>(kind) - 4),
           reg[op[0]],
@@ -68,6 +76,10 @@ namespace Cube {
       op += sizeof(Object*) + 1;
       loopEnd;
     }
+
+    DO_JUMP:
+    DO_CALL:
+      ;
     
 
   }

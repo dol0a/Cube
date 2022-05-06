@@ -12,6 +12,7 @@ namespace Cube {
     AST_DIV,
     AST_MOD,
 
+    AST_TYPE,
     AST_FUNCTION
   };
 }
