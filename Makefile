@@ -10,6 +10,7 @@ SOURCE	:= src \
 	src/Assembler \
 	src/Compiler \
 	src/Driver \
+	src/Error \
 	src/Evaluater \
 	src/IO_Wrapper \
 	src/Lexer \

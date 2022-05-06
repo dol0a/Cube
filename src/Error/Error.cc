@@ -4,26 +4,9 @@
 #include "SourceRef.h"
 
 #define ERRLIST_MAX_SIZE  10
-namespace Cube::Error {
-  struct ErrorContext {
-    SourceRef* srcref;
-
-    size_t viewBegin, viewEnd;
-    size_t errBegin, errEnd;
-
-    std::string message;
-
-    void print() const {
-      printf("pos=%zu: %s\n", errBegin, message.c_str());
-    }
-  };
-
-  namespace {
-    std::vector<ErrorContext> ctx_list;
-    char buf[0x1000];
-  }
-
-  void append(Token* token, char const* fmt, ...) {
+namespace Cube {
+  
+  void Error::append(Token* token, char const* fmt, ...) {
     ErrorContext ctx = { 0 };
 
     va_list ap;
@@ -39,11 +22,11 @@ namespace Cube::Error {
     ctx_list.emplace_back(ctx);
   }
 
-  void append(AST::Base* ast, char const* fmt, ...) {
+  void Error::append(AST::Base* ast, char const* fmt, ...) {
     append(ast->token, "append with AST not yet implemented");
   }
 
-  void check() {
+  void Error::check() {
     if( ctx_list.size() >= ERRLIST_MAX_SIZE ) {
       view_all();
       
@@ -55,20 +38,20 @@ namespace Cube::Error {
     }
   }
 
-  void check_strict() {
+  void Error::check_strict() {
     if( !ctx_list.empty() ) {
       view_all();
       crash();
     }
   }
 
-  void view_all() {
+  void Error::view_all() {
     for( auto&& err : ctx_list ) {
       err.print();
     }
   }
 
-  void crash() {
+  void Error::crash() {
     view_all();
     exit(1);
   }
