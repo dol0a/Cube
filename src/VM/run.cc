@@ -14,8 +14,13 @@ namespace Cube {
       &&DO_MOV,
       &&DO_MOVI,
       &&DO_ADD,
+      &&DO_SUB,
       &&DO_MUL,
+      &&DO_DIV,
       &&DO_ADDI,
+      &&DO_SUBI,
+      &&DO_MULI,
+      &&DO_DIVI,
     };
 
     auto op = code.begin();
@@ -42,14 +47,25 @@ namespace Cube {
     }
 
     DO_ADD:;
-    DO_MUL:; {
+    DO_SUB:; 
+    DO_MUL:; 
+    DO_DIV:; {
       calcObject(kind, reg[*op], reg[*(++op)]);
       op++;
       loopEnd;
     }
 
-    DO_ADDI:; {
+    DO_ADDI:;
+    DO_SUBI:;
+    DO_MULI:;
+    DO_DIVI:; {
+      calcObject(
+          static_cast<AsmOpKind>(static_cast<u8>(kind) - 4),
+          reg[op[0]],
+          derefCode<Object*>(op[1])
+        );
 
+      op += sizeof(Object*) + 1;
       loopEnd;
     }
     

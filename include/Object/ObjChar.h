@@ -1,19 +1,19 @@
 #pragma once
 
 namespace Cube {
-  struct ObjString : Object {
-    std::wstring value;
+  struct ObjChar : Object {
+    wchar_t value;
 
     std::string toString() const {
       return
         std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>()
-        .to_bytes(value);
+        .to_bytes(std::wstring(1, value));
     }
 
-    ObjString(std::wstring val = L"")
+    ObjChar(wchar_t val = 0)
       : value(val)
     {
-      type = TYPE_STRING;
+      type = TYPE_CHAR;
     }
   };
 }

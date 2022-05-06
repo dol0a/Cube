@@ -10,9 +10,14 @@ namespace Cube {
     ASM_MOVI,
 
     ASM_ADD,
+    ASM_SUB,
     ASM_MUL,
+    ASM_DIV,
 
     ASM_ADDI,
+    ASM_SUBI,
+    ASM_MULI,
+    ASM_DIVI,
   };
 
   struct Object;

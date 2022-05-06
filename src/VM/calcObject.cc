@@ -10,6 +10,19 @@ namespace Cube {
           case TYPE_LONG:
             ((ObjLong*)lhs)->value += ((ObjLong*)rhs)->value;
             break;
+          case TYPE_FLOAT:
+            ((ObjFloat*)lhs)->value += ((ObjFloat*)rhs)->value;
+            break;
+        }
+
+        break;
+      }
+
+      case ASM_SUB: {
+        switch( lhs->type.kind ) {
+          case TYPE_LONG:
+            ((ObjLong*)lhs)->value -= ((ObjLong*)rhs)->value;
+            break;
         }
 
         break;
@@ -24,6 +37,18 @@ namespace Cube {
 
         break;
       }
+
+      case ASM_DIV: {
+        switch( lhs->type.kind ) {
+          case TYPE_LONG:
+            ((ObjLong*)lhs)->value /= ((ObjLong*)rhs)->value;
+            break;
+        }
+
+        break;
+      }
+
+
     }
   }
 
