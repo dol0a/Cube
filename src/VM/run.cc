@@ -25,12 +25,18 @@ namespace Cube {
       &&DO_DIVI,
       &&DO_JUMP,
       &&DO_CALL,
+      &&DO_RETURN,
     };
 
-    auto op = code.begin();
+    //auto op = code.begin();
+    auto op = &code[0];
 
   LOOP_BEGIN:;
-    if( op == code.end() ) {
+
+    // alert;
+    // fprintf(stderr,"*op = %02X\n", *op);
+
+    if( op == &code[0] + code.size() ) {
       return;
     }
 
@@ -58,8 +64,8 @@ namespace Cube {
     DO_SUB:
     DO_MUL:
     DO_DIV: {
-      calcObject(kind, reg[*op], reg[*(++op)]);
-      op++;
+      calcObject(kind, reg[op[0]], reg[op[1]]);
+      op += 2;
       loopEnd;
     }
 
@@ -79,8 +85,11 @@ namespace Cube {
 
     DO_JUMP:
     DO_CALL:
-      ;
+      op = derefCode<u8*>(*op);
+      loopEnd;
     
+    DO_RETURN:
+      ;
 
   }
 

@@ -13,14 +13,19 @@ namespace Cube {
     bool eat(std::wstring_view str);
     void expect(std::wstring_view str);
 
+    void expectIdent();
+    AST::Type* expectTypename();
+    AST::Scope* expectScope();
+
   public:
     explicit Parser(Token* token);
 
     AST::Base* primary();
     AST::Base* mul();
     AST::Base* add();
+    AST::Base* expr();
 
-    AST::Function* func();
+    AST::Base* top();
 
     AST::Base* parse();
   };

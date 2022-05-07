@@ -61,30 +61,36 @@ int main(int argc, char** argv) {
   compiler.compile(ast, 3);
   Error::check_strict();
   
+  alert;
+  for(auto&&i:compiler.get_oplist()){
+    std::cout<<i.toString()<<std::endl;
+  }
+
   std::vector<u8> code;
 
+  alert;
   Assembler assembler{ code, compiler.get_oplist() };
 
   assembler.asm_full();
   Error::check_strict();
 
-/*
   for( auto p = code.begin(); p != code.end(); p++ ) {
     printf("%02X\n", *p);
   }
 
-alert;
+// alert;
 
-  auto p1 = compiler.get_oplist()[0].object;
-  auto p2 = derefCode<Object*>(code[2]);
+//   auto p1 = compiler.get_oplist()[0].object;
+//   auto p2 = derefCode<Object*>(code[2]);
 
-  printf("%p\n", p1);
-  printf("%p\n", p2);
+//   printf("%p\n", p1);
+//   printf("%p\n", p2);
 
-  std::cout << p2->toString() << std::endl;
-  */
+//   std::cout << p2->toString() << std::endl;
 
   VM vm{ code };
+
+  alert;
   vm.run();
 
   

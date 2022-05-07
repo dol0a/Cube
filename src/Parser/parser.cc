@@ -10,6 +10,6 @@ namespace Cube {
   }
 
   AST::Base* Parser::parse() {
-    return add();
+    return top();
   }
 }

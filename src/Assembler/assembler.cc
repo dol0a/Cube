@@ -11,7 +11,7 @@ namespace Cube {
       oplist(oplist)
   {
   }
-
+  
   template <class T, class... Args>
   void Assembler::push(T const& t, Args&&... args) {
     output.resize(output.size() + sizeof(T));
@@ -25,6 +25,11 @@ namespace Cube {
   void Assembler::asm_full() {
 
     for( auto&& op : oplist ) {
+      if( op.kind == ASM_LABEL ) {
+        labelMap[op.label] = &output[0] + output.size();
+        continue;
+      }
+
       push(op.kind);
  
       switch( op.kind ) {
@@ -38,6 +43,10 @@ namespace Cube {
         case ASM_ADDI:
           push(op.regDest, op.object);
           break;
+        
+        case ASM_CALL:
+        case ASM_JUMP:
+          push(labelMap[op.label]);
       }
     }
     

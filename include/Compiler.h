@@ -18,6 +18,10 @@ namespace Cube {
 
     void asmAddI(u8 rA, u8 rB, Object* val);
 
+    void asmReturn();
+
+    void placeLabel(std::wstring_view name);
+
   public:
     Compiler() { }
 

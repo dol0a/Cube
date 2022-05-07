@@ -24,6 +24,9 @@ namespace Cube {
 
     ASM_JUMP,
     ASM_CALL,
+    ASM_RETURN,
+
+    ASM_LABEL,
   };
 
   struct Object;
@@ -33,6 +36,7 @@ namespace Cube {
     u8 regSrc;
     
     Object* object;
+    std::wstring_view label;
 
     std::string toString() const;
 

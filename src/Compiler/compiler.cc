@@ -1,6 +1,8 @@
 #include <iostream>
 #include "Compiler.h"
 
+#include "dbg.h"
+
 namespace Cube {
 
   void Compiler::compile(AST::Base* ast, int reg) {
@@ -10,7 +12,33 @@ namespace Cube {
     
     switch( ast->kind ) {
       case AST_VALUE: {
+        alert;
+        fprintf(stderr,"%p\n",((AST::Value*)ast)->value);
+
         asmMovI(reg, ((AST::Value*)ast)->value);
+
+        break;
+      }
+
+      case AST_FUNCTION: {
+        auto x = (AST::Function*)ast;
+
+        placeLabel(x->name);
+
+        compile(x->code, 3);
+
+        asmMov(0, 3);
+        asmReturn();
+
+        break;
+      }
+
+      case AST_SCOPE: {
+        auto x = (AST::Scope*)ast;
+
+        for( auto&& i : x->list ) {
+          compile(i, reg);
+        }
 
         break;
       }

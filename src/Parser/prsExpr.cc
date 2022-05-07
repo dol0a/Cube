@@ -2,6 +2,8 @@
 #include "Error.h"
 #include "Utils.h"
 
+#include "dbg.h"
+
 namespace Cube {
   AST::Base* Parser::primary() {
     
@@ -13,6 +15,9 @@ namespace Cube {
 
         x->token = cur;
         x->value = obj;
+
+        alert;
+        fprintf(stderr,"%p\n",obj);
 
         next();
         return x;
@@ -45,6 +50,10 @@ namespace Cube {
     }
 
     return x;
+  }
+
+  AST::Base* Parser::expr() {
+    return add();
   }
 
 }

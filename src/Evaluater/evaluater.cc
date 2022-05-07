@@ -1,6 +1,8 @@
 #include "Evaluater.h"
 #include "Error.h"
 
+#include "dbg.h"
+
 namespace Cube {
 
   TypeInfo Evaluater::eval(AST::Base* ast) {
@@ -12,6 +14,31 @@ namespace Cube {
       case AST_VALUE: {
         switch( ast->token->kind ) {
           case TOK_INT: ret = TYPE_LONG; break;
+        }
+
+        alert;
+        fprintf(stderr,"%p\n",((AST::Value*)ast)->value);
+
+        break;
+      }
+
+      case AST_VARIABLE: {
+
+        break;
+      }
+
+      case AST_FUNCTION: {
+        auto x = (AST::Function*)ast;
+
+      alert;
+        ret = eval(x->code);
+
+        break;
+      }
+
+      case AST_SCOPE: {
+        for( auto&& i : ((AST::Scope*)ast)->list ) {
+          eval(i);
         }
 
         break;

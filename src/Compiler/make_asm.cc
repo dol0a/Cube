@@ -23,4 +23,13 @@ namespace Cube {
     
   }
 
+  void Compiler::asmReturn() {
+    oplist.emplace_back(ASM_RETURN, 0, 0);
+  }
+
+  void Compiler::placeLabel(std::wstring_view name) {
+    oplist.emplace_back(ASM_LABEL, 0, 0).label = name;
+  }
+  
+
 }

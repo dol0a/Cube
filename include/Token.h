@@ -22,6 +22,17 @@ namespace Cube {
     std::wstring_view str;
     SourceRef* src;
 
+    Token* insert(std::wstring_view str) {
+      auto tk = new Token(TOK_IDENT);
+      tk->str = str;
+      tk->pos = pos;
+      tk->next = next;
+
+      next = tk;
+
+      return tk;
+    }
+
     Token(TokenKind kind)
       : kind(kind),
         prev(nullptr),

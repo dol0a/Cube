@@ -21,6 +21,18 @@ namespace Cube {
 
       case ASM_ADDI:
         return format("addi r%d, %s", regDest, object->toString().c_str());
+      
+      case ASM_JUMP:
+        return "jump " + Utils::Converter::to_string(label);
+      
+      case ASM_CALL:
+        return "call " + Utils::Converter::to_string(label);
+      
+      case ASM_RETURN:
+        return "return";
+      
+      case ASM_LABEL:
+        return Utils::Converter::to_string(label) + ":";
     }
 
     return "";

@@ -5,7 +5,7 @@
 
 namespace Cube::AST {
   struct Value : Base {
-    Object* value;
+    Object* value = nullptr;
 
     Value() {
       kind = AST_VALUE;

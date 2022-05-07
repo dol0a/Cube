@@ -1,5 +1,6 @@
 #pragma once
 
+#include <map>
 #include <vector>
 #include "ASMoperand.h"
 
@@ -8,6 +9,7 @@ namespace Cube {
     //u8* code;
     std::vector<u8>& output;
     std::vector<AsmOperand> const& oplist;
+    std::map<std::wstring_view, u8*> labelMap;
 
   public:
     explicit Assembler(std::vector<u8>& output, std::vector<AsmOperand> const& oplist);

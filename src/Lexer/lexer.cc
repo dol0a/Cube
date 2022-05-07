@@ -30,10 +30,20 @@ static wchar_t const* reservedIdentifiers[] = {
 };
 
 static wchar_t const* reservedTokens[] = {
+  L"<<"
+  L">>"
+  L"[]"
+  L"[",
+  L"]",
+  L"{",
+  L"}",
+  L"(",
+  L")",
+  L"=",
   L"+",
   L"-",
   L"*",
-  L"/"
+  L"/",
 };
 
 namespace Cube {
