@@ -20,7 +20,10 @@ namespace Cube {
   public:
     explicit Parser(Token* token);
 
+    AST::CallFunc* prsCallFunc();
+
     AST::Base* primary();
+    AST::Base* unary();
     AST::Base* mul();
     AST::Base* add();
     AST::Base* expr();

@@ -5,7 +5,9 @@ namespace Cube {
     AST_VALUE,
     AST_VARIABLE,
     AST_CALLFUNC,
+    AST_GETBUILTIN,
 
+    AST_SCOPE_RESOLUTION,
     AST_MEMBER_ACCESS,
 
     AST_ADD,

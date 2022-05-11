@@ -59,5 +59,6 @@
     "mutex": "cpp",
     "cinttypes": "cpp",
     "map": "cpp"
-  }
+  },
+  "editor.bracketPairColorization.enabled": false
 }

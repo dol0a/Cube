@@ -1,12 +1,9 @@
 #pragma once
 
 namespace Cube::AST {
-  struct CallFunc : Base {
+  struct Variable : Base {
     std::wstring_view name;
-    std::vector<Argument*> args;
 
-    bool syscall = false;
-
-    CallFunc() { kind = AST_CALLFUNC; }
+    Variable() { kind = AST_VARIABLE; }
   };
 }
