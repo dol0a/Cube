@@ -30,7 +30,6 @@ namespace Cube {
       case AST_FUNCTION: {
         auto x = (AST::Function*)ast;
 
-      alert;
         ret = eval(x->code);
 
         break;

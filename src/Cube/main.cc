@@ -62,21 +62,22 @@ int main(int argc, char** argv) {
   Error::check_strict();
   
   alert;
+  std::cout<<"compiled code:\n";
   for(auto&&i:compiler.get_oplist()){
     std::cout<<i.toString()<<std::endl;
   }
+  std::cout<<std::endl;
 
   std::vector<u8> code;
 
-  alert;
   Assembler assembler{ code, compiler.get_oplist() };
 
   assembler.asm_full();
   Error::check_strict();
 
-  for( auto p = code.begin(); p != code.end(); p++ ) {
-    printf("%02X\n", *p);
-  }
+  // for( auto p = code.begin(); p != code.end(); p++ ) {
+  //   printf("%02X\n", *p);
+  // }
 
 // alert;
 
@@ -90,9 +91,16 @@ int main(int argc, char** argv) {
 
   VM vm{ code };
 
-  alert;
+  //alert;
   vm.run();
 
+  std::cout << "CPU:" << std::endl;
+
+  for( size_t i = 0; i < sizeof(vm.reg) / sizeof(Object*); i++ ) {
+    auto p = vm.reg[i];
+
+    printf("  vm.reg[%zu] = %s\n", i, p ? p->toString().c_str() : "<null>");
+  }
   
 
 }

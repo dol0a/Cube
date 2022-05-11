@@ -27,6 +27,9 @@ namespace Cube {
     ASM_RETURN,
 
     ASM_LABEL,
+
+    ASM_SYSCALL,
+
   };
 
   struct Object;

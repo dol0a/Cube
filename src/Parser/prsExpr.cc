@@ -7,6 +7,12 @@
 namespace Cube {
   AST::Base* Parser::primary() {
     
+    if( eat(L"@") ) {
+      expectIdent();
+
+      
+    }
+
     switch( cur->kind ) {
       case TOK_INT: {
         auto x = new AST::Value();
@@ -15,9 +21,6 @@ namespace Cube {
 
         x->token = cur;
         x->value = obj;
-
-        alert;
-        fprintf(stderr,"%p\n",obj);
 
         next();
         return x;

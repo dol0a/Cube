@@ -1,0 +1,394 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.2.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Thu May 12 03:53:06 2022
+
+# Variables
+
+# 'override' directive
+GNUMAKEFLAGS := 
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+DESKTOP_SESSION = ubuntu
+# default
+.SHELLFLAGS := -c
+# environment
+XDG_SESSION_CLASS = user
+# environment
+XDG_SESSION_TYPE = x11
+# environment
+VSCODE_LOG_NATIVE = false
+# makefile (from 'Makefile', line 1)
+TARGET := cube
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+IM_CONFIG_PHASE = 1
+# makefile (from 'Makefile', line 40)
+INCLUDES = $(foreach dir,$(INCLUDE),-I$(CURDIR)/$(dir))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+XAUTHORITY = /run/user/1000/gdm/Xauthority
+# environment
+GDMSESSION = ubuntu
+# environment
+XMODIFIERS = @im=ibus
+# makefile
+CURDIR := /home/bunkei/sources/cpp/chang2
+# makefile
+SHELL = /bin/sh
+# environment
+VSCODE_NLS_CONFIG = {"locale":"ja","availableLanguages":{"*":"ja"},"_languagePackId":"f5b8523d60216379ef9ba6dc243eb093.ja","_translationsConfigFile":"/home/bunkei/.config/Code/clp/f5b8523d60216379ef9ba6dc243eb093.ja/tcf.json","_cacheRoot":"/home/bunkei/.config/Code/clp/f5b8523d60216379ef9ba6dc243eb093.ja","_resolvedLanguagePackCoreLocation":"/home/bunkei/.config/Code/clp/f5b8523d60216379ef9ba6dc243eb093.ja/57fd6d0195bb9b9d1b49f6da5db789060795de47","_corruptedFile":"/home/bunkei/.config/Code/clp/f5b8523d60216379ef9ba6dc243eb093.ja/corrupted.info","_languagePackSupport":true}
+# environment
+_ = /usr/share/code/code
+# makefile (from 'Makefile', line 24)
+CFLAGS := -O1  -Wno-switch 
+# environment
+JOURNAL_STREAM = 8:43472
+# environment
+XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# automatic
+@F = $(notdir $@)
+# environment
+GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
+# environment
+USERNAME = bunkei
+# makefile (from 'Makefile', line 25)
+CXXFLAGS := -O1  -Wno-switch  -std=c++20
+# environment
+XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# makefile (from 'Makefile', line 42)
+ 
+CFILES = $(notdir $(foreach dir,$(VPATH),$(wildcard $(dir)/*.c)))
+# environment
+MANAGERPID = 1030
+# environment
+LESSOPEN = | /usr/bin/lesspipe %s
+# environment
+VSCODE_CWD = /home/bunkei
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+PATH = /home/bunkei/.local/bin:/opt/devkitpro/tools/bin:/home/bunkei/.local/bin:/opt/devkitpro/tools/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+# makefile (from 'Makefile', line 43)
+CXXFILES = $(notdir $(foreach dir,$(VPATH),$(wildcard $(dir)/*.cc)))
+# makefile (from 'Makefile', line 5)
+LD := clang++
+# environment
+GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
+# environment
+SESSION_MANAGER = local/bunkei-Vostro-3681:@/tmp/.ICE-unix/1360,unix/bunkei-Vostro-3681:/tmp/.ICE-unix/1360
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# makefile (from 'Makefile', line 38)
+VPATH = $(foreach dir,$(SOURCE),$(CURDIR)/$(dir))
+# environment
+XDG_MENU_PREFIX = gnome-
+# environment
+VSCODE_LOG_STACK = false
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+INVOCATION_ID = 2608016205ec479c97f7bf69456f01e3
+# makefile (from 'Makefile', line 26)
+LDFLAGS := -Wl,--gc-sections
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# environment
+LS_COLORS = 
+# environment
+XDG_SESSION_DESKTOP = ubuntu
+# environment
+SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
+# environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2289
+# automatic
+%F = $(notdir $%)
+# environment
+DISPLAY = :0
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+PWD = /home/bunkei/sources/cpp/chang2
+# default
+.LOADED := 
+# environment
+SSH_AGENT_PID = 1323
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
+# environment
+GTK_MODULES = gail:atk-bridge
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /home/bunkei
+# environment
+LESSCLOSE = /usr/bin/lesspipe %s %s
+# environment
+VSCODE_CODE_CACHE_PATH = /home/bunkei/.config/Code/CachedData/57fd6d0195bb9b9d1b49f6da5db789060795de47
+# environment
+LOGNAME = bunkei
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# environment
+GNOME_DESKTOP_SESSION_ID = this-is-deprecated
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+DEVKITPRO = /opt/devkitpro
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+QT_IM_MODULE = ibus
+# environment
+DEVKITARM = /opt/devkitpro/devkitARM
+# environment
+SHLVL = 0
+# makefile (from 'Makefile', line 3)
+CC := clang
+# environment
+GNOME_SHELL_SESSION_MODE = ubuntu
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-1e5a8b09-df07-4a76-a833-9af038c19892.sock
+# makefile (from 'Makefile', line 9)
+SOURCE := src src/Assembler src/Compiler src/Cube src/Driver src/Error src/Evaluater src/IO_Wrapper src/Lexer src/Parser src/Types src/Utils src/VM
+# default
+MAKE_VERSION := 4.2.1
+# environment
+USER = bunkei
+# makefile
+.DEFAULT_GOAL := all
+# makefile (from 'Makefile', line 8)
+INCLUDE := include
+# environment
+XDG_CURRENT_DESKTOP = Unity
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+MAKE_COMMAND := make
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_IPC_HOOK = /run/user/1000/vscode-2b1cb7e1-1.67.0-main.sock
+# makefile
+MAKEFLAGS = pqrR
+# environment
+MFLAGS = -pqrR
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+GDK_BACKEND = x11
+# automatic
++F = $(notdir $+)
+# environment
+QT_ACCESSIBILITY = 1
+# makefile (from 'Makefile', line 23)
+COMMONFLAGS := -O1
+# makefile (from 'Makefile', line 39)
+OUTPUT = $(CURDIR)/$(TARGET)
+# default
+MAKEFILES := 
+# makefile (from 'Makefile', line 7)
+BUILD := build
+# automatic
+<F = $(notdir $<)
+# makefile (from 'Makefile', line 4)
+CXX := clang++
+# environment
+LC_ALL = C
+# environment
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# environment
+WINDOWPATH = 2
+# environment
+DEVKITPPC = /opt/devkitpro/devkitPPC
+# environment
+GJS_DEBUG_OUTPUT = stderr
+# default
+.RECIPEPREFIX := 
+# makefile (from 'Makefile', line 45)
+OBJECTS = $(CFILES:.c=.o) $(CXXFILES:.cc=.o)
+# environment
+LANG = C
+# environment
+VSCODE_PID = 2289
+# variable set hash-table stats:
+# Load=117/1024=11%, Rehash=0, Collisions=20/172=12%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# /home/bunkei/sources/cpp/chang2/src/Error (device 2053, inode 16384372): No files, no impossibilities so far.
+# . (device 2053, inode 15994887): 14 files, no impossibilities.
+# /home/bunkei/sources/cpp/chang2/src/Utils (device 2053, inode 16515170): 3 files, no impossibilities.
+# /home/bunkei/sources/cpp/chang2/src/Types (device 2053, inode 16388003): 4 files, no impossibilities.
+# /home/bunkei/sources/cpp/chang2/src/Driver (device 2053, inode 16384609): No files, no impossibilities so far.
+# /home/bunkei/sources/cpp/chang2/src/Evaluater (device 2053, inode 16515162): No files, no impossibilities so far.
+# /home/bunkei/sources/cpp/chang2/src/VM (device 2053, inode 16515165): 6 files, no impossibilities.
+# /home/bunkei/sources/cpp/chang2/src/Parser (device 2053, inode 16387930): 7 files, no impossibilities.
+# /home/bunkei/sources/cpp/chang2/src/Cube (device 2053, inode 16384915): No files, no impossibilities so far.
+# /home/bunkei/sources/cpp/chang2/src (device 2053, inode 16259050): No files, no impossibilities so far.
+# /home/bunkei/sources/cpp/chang2/src/Compiler (device 2053, inode 16387990): No files, no impossibilities so far.
+# /home/bunkei/sources/cpp/chang2/src/Lexer (device 2053, inode 16384016): No files, no impossibilities so far.
+# /home/bunkei/sources/cpp/chang2/src/IO_Wrapper (device 2053, inode 16515164): No files, no impossibilities so far.
+# /home/bunkei/sources/cpp/chang2/src/Assembler (device 2053, inode 16387972): No files, no impossibilities so far.
+
+# 34 files, no impossibilities in 14 directories.
+
+# Implicit Rules
+
+%.o: %.c
+#  recipe to execute (from 'Makefile', line 29):
+	@echo $(notdir $<)
+	@$(CC) -MMD -MP -MF $*.d $(CFLAGS) -c -o $@ $<
+
+%.o: %.cc
+#  recipe to execute (from 'Makefile', line 33):
+	@echo $(notdir $<)
+	@$(CXX) -MMD -MP -MF $*.d $(CXXFLAGS) -c -o $@ $<
+
+# 2 implicit rules, 0 (0.0%) terminal.
+
+# Files
+
+all: build
+#  Phony target (prerequisite of .PHONY).
+#  Command line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
+
+.PHONY: build debug clean all re
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-11 02:02:54.718631222
+#  File has been updated.
+#  Successfully updated.
+
+debug:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 56):
+	@[ -d $(BUILD) ] || mkdir -p $(BUILD)
+	@$(MAKE) --no-print-directory COMMONFLAGS="-g -O0" -C $(BUILD) -f $(CURDIR)/Makefile
+
+build:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := build
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=3/17=18%
+#  recipe to execute (from 'Makefile', line 52):
+	@[ -d $@ ] || mkdir -p $@
+	@$(MAKE) --no-print-directory -C $@ -f $(CURDIR)/Makefile
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+re: clean all
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 60):
+	@rm -rf $(BUILD) $(TARGET)
+
+# files hash-table stats:
+# Load=9/1024=1%, Rehash=0, Collisions=0/33=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# General ('VPATH' variable) search path:
+# /home/bunkei/sources/cpp/chang2/src:/home/bunkei/sources/cpp/chang2/src/Assembler:/home/bunkei/sources/cpp/chang2/src/Compiler:/home/bunkei/sources/cpp/chang2/src/Cube:/home/bunkei/sources/cpp/chang2/src/Driver:/home/bunkei/sources/cpp/chang2/src/Error:/home/bunkei/sources/cpp/chang2/src/Evaluater:/home/bunkei/sources/cpp/chang2/src/IO_Wrapper:/home/bunkei/sources/cpp/chang2/src/Lexer:/home/bunkei/sources/cpp/chang2/src/Parser:/home/bunkei/sources/cpp/chang2/src/Types:/home/bunkei/sources/cpp/chang2/src/Utils:/home/bunkei/sources/cpp/chang2/src/VM
+
+# strcache buffers: 1 (0) / strings = 52 / storage = 885 B / avg = 17 B
+# current buf: size = 8162 B / used = 885 B / count = 52 / avg = 17 B
+
+ 
+# strcache performance: lookups = 95 / hit rate = 45%
+# hash-table stats:
+# Load=52/8192=1%, Rehash=0, Collisions=6/95=6%
+# Finished Make data base on Thu May 12 03:53:06 2022
+
+ 

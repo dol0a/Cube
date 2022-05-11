@@ -12,9 +12,6 @@ namespace Cube {
     
     switch( ast->kind ) {
       case AST_VALUE: {
-        alert;
-        fprintf(stderr,"%p\n",((AST::Value*)ast)->value);
-
         asmMovI(reg, ((AST::Value*)ast)->value);
 
         break;

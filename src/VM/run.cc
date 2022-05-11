@@ -4,7 +4,8 @@
 
 #include "dbg.h"
 
-#define  loopEnd  goto LOOP_BEGIN
+#define  _continue  goto LOOP_BEGIN
+#define  _end goto LOOP_END
 
 namespace Cube {
   
@@ -26,6 +27,7 @@ namespace Cube {
       &&DO_JUMP,
       &&DO_CALL,
       &&DO_RETURN,
+      &&DO_SYSCALL,
     };
 
     //auto op = code.begin();
@@ -44,16 +46,16 @@ namespace Cube {
     goto *jumpTable[*op++];
 
     DO_MOV: {
-      reg[*op] = reg[*(++op)];
-      op++;
-      loopEnd;
+      reg[op[0]] = reg[op[1]];
+      op += 2;
+      _continue;
     }
 
     DO_MOVI: {
       auto& dest = reg[*op++];
       dest = derefCode<Object*>(*op);
       op += sizeof(Object*);
-      loopEnd;
+      _continue;
     }
 
     DO_CMP:
@@ -66,7 +68,7 @@ namespace Cube {
     DO_DIV: {
       calcObject(kind, reg[op[0]], reg[op[1]]);
       op += 2;
-      loopEnd;
+      _continue;
     }
 
     DO_ADDI:
@@ -80,17 +82,22 @@ namespace Cube {
         );
 
       op += sizeof(Object*) + 1;
-      loopEnd;
+      _continue;
     }
 
     DO_JUMP:
     DO_CALL:
       op = derefCode<u8*>(*op);
-      loopEnd;
+      _continue;
     
     DO_RETURN:
-      ;
+      _end;
+    
+    DO_SYSCALL:
+      callBuiltinFunc(*op++);
+      _continue;
 
+  LOOP_END:;
   }
 
 }

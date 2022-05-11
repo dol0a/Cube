@@ -1,0 +1,19 @@
+fn print(fmt: string, ...args) -> int {
+  let s : string;
+  let it = args.begin;
+
+  for ch, i in fmt {
+    if ch == '{' {
+      
+    }
+
+    s += ch
+  }
+
+  @print(s);
+  s.length()
+}
+
+fn println(...args) {
+  print(args..) + print("\n")
+}

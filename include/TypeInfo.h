@@ -11,6 +11,8 @@ namespace Cube {
     TYPE_CHAR,
     TYPE_STRING,
     TYPE_TUPLE,
+    TYPE_ITERATOR,
+    TYPE_RANGE,
     TYPE_NONE
   };
 
@@ -22,6 +24,8 @@ namespace Cube {
       L"char",
       L"string",
       L"tuple",
+      L"iterator",
+      L"range",
       L"none",
     };
 
