@@ -47,6 +47,17 @@ namespace Cube {
         case ASM_CALL:
         case ASM_JUMP:
           push(labelMap[op.label]);
+          break;
+
+        case ASM_SYSCALL: {
+          push(op.num);
+          break;
+        }
+
+        case ASM_PUSH_ARG: {
+          push(op.regDest);
+          break;
+        }
       }
     }
     

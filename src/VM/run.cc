@@ -37,9 +37,6 @@ namespace Cube {
 
   LOOP_BEGIN:;
 
-    // alert;
-    // fprintf(stderr,"*op = %02X\n", *op);
-
     if( op == &code[0] + code.size() ) {
       return;
     }
