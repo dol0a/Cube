@@ -1,65 +1,9 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory '/home/bunkei/sources/cpp/chang2'
 [ -d build ] || mkdir -p build
 make --no-print-directory -C build -f /home/bunkei/sources/cpp/chang2/Makefile
  
-echo assembler.cc
-clang++ -MMD -MP -MF assembler.d -O1 -I/home/bunkei/sources/cpp/chang2/include -Wno-switch -I/home/bunkei/sources/cpp/chang2/include -std=c++20 -c -o assembler.o /home/bunkei/sources/cpp/chang2/src/Assembler/assembler.cc
- 
-echo compiler.cc
-clang++ -MMD -MP -MF compiler.d -O1 -I/home/bunkei/sources/cpp/chang2/include -Wno-switch -I/home/bunkei/sources/cpp/chang2/include -std=c++20 -c -o compiler.o /home/bunkei/sources/cpp/chang2/src/Compiler/compiler.cc
-echo make_asm.cc
-clang++ -MMD -MP -MF make_asm.d -O1 -I/home/bunkei/sources/cpp/chang2/include -Wno-switch -I/home/bunkei/sources/cpp/chang2/include -std=c++20 -c -o make_asm.o /home/bunkei/sources/cpp/chang2/src/Compiler/make_asm.cc
- 
-echo cmdline.cc
-clang++ -MMD -MP -MF cmdline.d -O1 -I/home/bunkei/sources/cpp/chang2/include -Wno-switch -I/home/bunkei/sources/cpp/chang2/include -std=c++20 -c -o cmdline.o /home/bunkei/sources/cpp/chang2/src/Cube/cmdline.cc
-echo main.cc
- 
-clang++ -MMD -MP -MF main.d -O1 -I/home/bunkei/sources/cpp/chang2/include -Wno-switch -I/home/bunkei/sources/cpp/chang2/include -std=c++20 -c -o main.o /home/bunkei/sources/cpp/chang2/src/Cube/main.cc
-echo driver.cc
-clang++ -MMD -MP -MF driver.d -O1 -I/home/bunkei/sources/cpp/chang2/include -Wno-switch -I/home/bunkei/sources/cpp/chang2/include -std=c++20 -c -o driver.o /home/bunkei/sources/cpp/chang2/src/Driver/driver.cc
-echo Error.cc
-clang++ -MMD -MP -MF Error.d -O1 -I/home/bunkei/sources/cpp/chang2/include -Wno-switch -I/home/bunkei/sources/cpp/chang2/include -std=c++20 -c -o Error.o /home/bunkei/sources/cpp/chang2/src/Error/Error.cc
-echo evaluater.cc
-clang++ -MMD -MP -MF evaluater.d -O1 -I/home/bunkei/sources/cpp/chang2/include -Wno-switch -I/home/bunkei/sources/cpp/chang2/include -std=c++20 -c -o evaluater.o /home/bunkei/sources/cpp/chang2/src/Evaluater/evaluater.cc
- 
-echo FileStream.cc
-clang++ -MMD -MP -MF FileStream.d -O1 -I/home/bunkei/sources/cpp/chang2/include -Wno-switch -I/home/bunkei/sources/cpp/chang2/include -std=c++20 -c -o FileStream.o /home/bunkei/sources/cpp/chang2/src/IO_Wrapper/FileStream.cc
-echo lexer.cc
-clang++ -MMD -MP -MF lexer.d -O1 -I/home/bunkei/sources/cpp/chang2/include -Wno-switch -I/home/bunkei/sources/cpp/chang2/include -std=c++20 -c -o lexer.o /home/bunkei/sources/cpp/chang2/src/Lexer/lexer.cc
-echo lexHelpers.cc
-clang++ -MMD -MP -MF lexHelpers.d -O1 -I/home/bunkei/sources/cpp/chang2/include -Wno-switch -I/home/bunkei/sources/cpp/chang2/include -std=c++20 -c -o lexHelpers.o /home/bunkei/sources/cpp/chang2/src/Lexer/lexHelpers.cc
- 
-echo prsExpr.cc
-clang++ -MMD -MP -MF prsExpr.d -O1 -I/home/bunkei/sources/cpp/chang2/include -Wno-switch -I/home/bunkei/sources/cpp/chang2/include -std=c++20 -c -o prsExpr.o /home/bunkei/sources/cpp/chang2/src/Parser/prsExpr.cc
-echo prsTop.cc
-clang++ -MMD -MP -MF prsTop.d -O1 -I/home/bunkei/sources/cpp/chang2/include -Wno-switch -I/home/bunkei/sources/cpp/chang2/include -std=c++20 -c -o prsTop.o /home/bunkei/sources/cpp/chang2/src/Parser/prsTop.cc
-echo parser.cc
-clang++ -MMD -MP -MF parser.d -O1 -I/home/bunkei/sources/cpp/chang2/include -Wno-switch -I/home/bunkei/sources/cpp/chang2/include -std=c++20 -c -o parser.o /home/bunkei/sources/cpp/chang2/src/Parser/parser.cc
- 
-echo prsHelpers.cc
-clang++ -MMD -MP -MF prsHelpers.d -O1 -I/home/bunkei/sources/cpp/chang2/include -Wno-switch -I/home/bunkei/sources/cpp/chang2/include -std=c++20 -c -o prsHelpers.o /home/bunkei/sources/cpp/chang2/src/Parser/prsHelpers.cc
-echo prsImport.cc
-clang++ -MMD -MP -MF prsImport.d -O1 -I/home/bunkei/sources/cpp/chang2/include -Wno-switch -I/home/bunkei/sources/cpp/chang2/include -std=c++20 -c -o prsImport.o /home/bunkei/sources/cpp/chang2/src/Parser/prsImport.cc
-echo TypeInfo.cc
-clang++ -MMD -MP -MF TypeInfo.d -O1 -I/home/bunkei/sources/cpp/chang2/include -Wno-switch -I/home/bunkei/sources/cpp/chang2/include -std=c++20 -c -o TypeInfo.o /home/bunkei/sources/cpp/chang2/src/Types/TypeInfo.cc
-echo ASMoperand.cc
-clang++ -MMD -MP -MF ASMoperand.d -O1 -I/home/bunkei/sources/cpp/chang2/include -Wno-switch -I/home/bunkei/sources/cpp/chang2/include -std=c++20 -c -o ASMoperand.o /home/bunkei/sources/cpp/chang2/src/Types/ASMoperand.cc
-echo Converter.cc
- 
-clang++ -MMD -MP -MF Converter.d -O1 -I/home/bunkei/sources/cpp/chang2/include -Wno-switch -I/home/bunkei/sources/cpp/chang2/include -std=c++20 -c -o Converter.o /home/bunkei/sources/cpp/chang2/src/Utils/Converter.cc
-echo VM.cc
-clang++ -MMD -MP -MF VM.d -O1 -I/home/bunkei/sources/cpp/chang2/include -Wno-switch -I/home/bunkei/sources/cpp/chang2/include -std=c++20 -c -o VM.o /home/bunkei/sources/cpp/chang2/src/VM/VM.cc
-echo calcObject.cc
-clang++ -MMD -MP -MF calcObject.d -O1 -I/home/bunkei/sources/cpp/chang2/include -Wno-switch -I/home/bunkei/sources/cpp/chang2/include -std=c++20 -c -o calcObject.o /home/bunkei/sources/cpp/chang2/src/VM/calcObject.cc
- 
-echo callBuiltin.cc
-clang++ -MMD -MP -MF callBuiltin.d -O1 -I/home/bunkei/sources/cpp/chang2/include -Wno-switch -I/home/bunkei/sources/cpp/chang2/include -std=c++20 -c -o callBuiltin.o /home/bunkei/sources/cpp/chang2/src/VM/callBuiltin.cc
-echo run.cc
-clang++ -MMD -MP -MF run.d -O1 -I/home/bunkei/sources/cpp/chang2/include -Wno-switch -I/home/bunkei/sources/cpp/chang2/include -std=c++20 -c -o run.o /home/bunkei/sources/cpp/chang2/src/VM/run.cc
- 
-echo linking...
-clang++ -Wl,--gc-sections -o /home/bunkei/sources/cpp/chang2/cube assembler.o compiler.o make_asm.o cmdline.o main.o driver.o Error.o evaluater.o FileStream.o lexer.o lexHelpers.o prsExpr.o prsTop.o parser.o prsHelpers.o prsImport.o TypeInfo.o ASMoperand.o Converter.o VM.o calcObject.o callBuiltin.o run.o
+make[1]: '/home/bunkei/sources/cpp/chang2/cube' is up to date.
  
 make: Leaving directory '/home/bunkei/sources/cpp/chang2'
  

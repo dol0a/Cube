@@ -17,6 +17,25 @@ namespace Cube {
         break;
       }
 
+      case AST_GETBUILTIN: {
+        auto x = (AST::GetBuiltin*)ast;
+
+        if( x->ast->kind == AST_CALLFUNC ) {
+          auto cf = (AST::CallFunc*)x->ast;
+
+          for( auto&& arg : cf->args ) {
+            compile(arg, reg);
+            asmPushArg(reg);
+          }
+
+          asmSyscall(x->num);
+        }
+
+        
+
+        break;
+      }
+
       case AST_FUNCTION: {
         auto x = (AST::Function*)ast;
 

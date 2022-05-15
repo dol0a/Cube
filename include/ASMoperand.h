@@ -30,6 +30,8 @@ namespace Cube {
 
     ASM_SYSCALL,
 
+    ASM_PUSH_ARG,
+
   };
 
   struct Object;
@@ -37,6 +39,7 @@ namespace Cube {
     AsmOpKind kind;
     u8 regDest;
     u8 regSrc;
+    int num;
     
     Object* object;
     std::wstring_view label;
@@ -47,6 +50,7 @@ namespace Cube {
       : kind(kind),
         regDest(ra),
         regSrc(rb),
+        num(0),
         object(nullptr)
     {
     }

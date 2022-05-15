@@ -30,7 +30,14 @@ namespace Cube {
       
       case ASM_RETURN:
         return "return";
+
+      case ASM_SYSCALL:
+        return format("syscall %d", num);
       
+      case ASM_PUSH_ARG: {
+        return format("pusha %d", regDest);
+      }
+
       case ASM_LABEL:
         return Utils::Converter::to_string(label) + ":";
     }

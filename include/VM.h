@@ -18,6 +18,7 @@ namespace Cube {
     void calcObject(AsmOpKind kind, Object* lhs, Object* rhs);
 
     void callBuiltinFunc(size_t num);
+    void popArg(int count);
 
 //  public:
     explicit VM(std::vector<u8> const& code);

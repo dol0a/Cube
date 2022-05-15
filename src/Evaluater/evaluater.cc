@@ -21,10 +21,30 @@ namespace Cube {
 
         break;
       }
-
+  
       case AST_VARIABLE: {
 
         break;
+      }
+
+      case AST_CALLFUNC: {
+        break;
+      }
+
+      case AST_GETBUILTIN: {
+        auto x = (AST::GetBuiltin*)ast;
+
+        if( x->ast->kind == AST_CALLFUNC ) {
+          auto cf = (AST::CallFunc*)(x->ast);
+
+          if( cf->name == L"print" ) {
+            x->num = 0;
+            return TYPE_LONG;
+          }
+        }
+
+        Error::append(x->token, "unknown builtin app");
+        Error::crash();
       }
 
       case AST_FUNCTION: {

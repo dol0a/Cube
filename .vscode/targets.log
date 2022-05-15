@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu May 12 03:53:06 2022
+# Make data base, printed on Sun May 15 11:57:30 2022
 
 # Variables
 
@@ -53,7 +53,7 @@ _ = /usr/share/code/code
 # makefile (from 'Makefile', line 24)
 CFLAGS := -O1  -Wno-switch 
 # environment
-JOURNAL_STREAM = 8:43472
+JOURNAL_STREAM = 8:42062
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from 'Makefile', line 1)
@@ -72,11 +72,11 @@ XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/d
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
-# makefile (from 'Makefile', line 42)
  
+# makefile (from 'Makefile', line 42)
 CFILES = $(notdir $(foreach dir,$(VPATH),$(wildcard $(dir)/*.c)))
 # environment
-MANAGERPID = 1030
+MANAGERPID = 1013
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -106,7 +106,7 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 2608016205ec479c97f7bf69456f01e3
+INVOCATION_ID = ae8f1e14d6014c449a25daa06b8c0bb5
 # makefile (from 'Makefile', line 26)
 LDFLAGS := -Wl,--gc-sections
 # default
@@ -118,7 +118,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2289
+GIO_LAUNCHED_DESKTOP_FILE_PID = 1855
 # automatic
 %F = $(notdir $%)
 # environment
@@ -146,7 +146,7 @@ VSCODE_CODE_CACHE_PATH = /home/bunkei/.config/Code/CachedData/57fd6d0195bb9b9d1b
 # environment
 LOGNAME = bunkei
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # environment
@@ -172,7 +172,7 @@ CC := clang
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-1e5a8b09-df07-4a76-a833-9af038c19892.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-be44c68c-04a9-4434-94f2-b290fb16ba60.sock
 # makefile (from 'Makefile', line 9)
 SOURCE := src src/Assembler src/Compiler src/Cube src/Driver src/Error src/Evaluater src/IO_Wrapper src/Lexer src/Parser src/Types src/Utils src/VM
 # default
@@ -244,7 +244,7 @@ OBJECTS = $(CFILES:.c=.o) $(CXXFILES:.cc=.o)
 # environment
 LANG = C
 # environment
-VSCODE_PID = 2289
+VSCODE_PID = 1855
 # variable set hash-table stats:
 # Load=117/1024=11%, Rehash=0, Collisions=20/172=12%
 
@@ -255,7 +255,7 @@ VSCODE_PID = 2289
 # Directories
 
 # /home/bunkei/sources/cpp/chang2/src/Error (device 2053, inode 16384372): No files, no impossibilities so far.
-# . (device 2053, inode 15994887): 14 files, no impossibilities.
+# . (device 2053, inode 15994887): 15 files, no impossibilities.
 # /home/bunkei/sources/cpp/chang2/src/Utils (device 2053, inode 16515170): 3 files, no impossibilities.
 # /home/bunkei/sources/cpp/chang2/src/Types (device 2053, inode 16388003): 4 files, no impossibilities.
 # /home/bunkei/sources/cpp/chang2/src/Driver (device 2053, inode 16384609): No files, no impossibilities so far.
@@ -269,7 +269,7 @@ VSCODE_PID = 2289
 # /home/bunkei/sources/cpp/chang2/src/IO_Wrapper (device 2053, inode 16515164): No files, no impossibilities so far.
 # /home/bunkei/sources/cpp/chang2/src/Assembler (device 2053, inode 16387972): No files, no impossibilities so far.
 
-# 34 files, no impossibilities in 14 directories.
+# 35 files, no impossibilities in 14 directories.
 
 # Implicit Rules
 
@@ -311,7 +311,7 @@ all: build
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-11 02:02:54.718631222
+#  Last modified 2022-05-15 11:57:05.609466253
 #  File has been updated.
 #  Successfully updated.
 
@@ -382,13 +382,12 @@ clean:
 # General ('VPATH' variable) search path:
 # /home/bunkei/sources/cpp/chang2/src:/home/bunkei/sources/cpp/chang2/src/Assembler:/home/bunkei/sources/cpp/chang2/src/Compiler:/home/bunkei/sources/cpp/chang2/src/Cube:/home/bunkei/sources/cpp/chang2/src/Driver:/home/bunkei/sources/cpp/chang2/src/Error:/home/bunkei/sources/cpp/chang2/src/Evaluater:/home/bunkei/sources/cpp/chang2/src/IO_Wrapper:/home/bunkei/sources/cpp/chang2/src/Lexer:/home/bunkei/sources/cpp/chang2/src/Parser:/home/bunkei/sources/cpp/chang2/src/Types:/home/bunkei/sources/cpp/chang2/src/Utils:/home/bunkei/sources/cpp/chang2/src/VM
 
-# strcache buffers: 1 (0) / strings = 52 / storage = 885 B / avg = 17 B
-# current buf: size = 8162 B / used = 885 B / count = 52 / avg = 17 B
+# strcache buffers: 1 (0) / strings = 53 / storage = 892 B / avg = 16 B
+# current buf: size = 8162 B / used = 892 B / count = 53 / avg = 16 B
 
- 
-# strcache performance: lookups = 95 / hit rate = 45%
+# strcache performance: lookups = 96 / hit rate = 44%
 # hash-table stats:
-# Load=52/8192=1%, Rehash=0, Collisions=6/95=6%
-# Finished Make data base on Thu May 12 03:53:06 2022
+# Load=53/8192=1%, Rehash=0, Collisions=6/96=6%
+# Finished Make data base on Sun May 15 11:57:30 2022
 
  

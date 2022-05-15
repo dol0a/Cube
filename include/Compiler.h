@@ -20,6 +20,10 @@ namespace Cube {
 
     void asmReturn();
 
+    void asmPushArg(int reg);
+
+    void asmSyscall(int num);
+
     void placeLabel(std::wstring_view name);
 
   public:

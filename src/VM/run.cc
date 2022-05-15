@@ -27,7 +27,9 @@ namespace Cube {
       &&DO_JUMP,
       &&DO_CALL,
       &&DO_RETURN,
+      nullptr,
       &&DO_SYSCALL,
+      &&DO_PUSHARG,
     };
 
     //auto op = code.begin();
@@ -95,6 +97,10 @@ namespace Cube {
     
     DO_SYSCALL:
       callBuiltinFunc(*op++);
+      _continue;
+
+    DO_PUSHARG:
+      args.emplace_back(reg[*op++]);
       _continue;
 
   LOOP_END:;
