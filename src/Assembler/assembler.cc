@@ -4,6 +4,8 @@
 #include "Assembler.h"
 #include "Utils.h"
 
+#include "dbg.h"
+
 namespace Cube {
 
   Assembler::Assembler(std::vector<u8>& output, std::vector<AsmOperand> const& oplist)
@@ -56,6 +58,19 @@ namespace Cube {
 
         case ASM_PUSH_ARG: {
           push(op.regDest);
+          break;
+        }
+
+        case ASM_RETURN:
+          break;
+
+        default: {
+          debug(
+            alert;
+            fprintf(stderr,"warn: AsmOpKind %d not handled\n", op.kind);
+            exit(1);
+          )
+
           break;
         }
       }

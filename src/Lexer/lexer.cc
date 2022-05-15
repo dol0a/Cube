@@ -112,7 +112,7 @@ namespace Cube {
       }
       else if( ch == L'"' || ch == L'\'' ) {
         cur->kind = ch == L'"' ? TOK_STRING : TOK_CHAR;
-        cur->str = { str, count_string(ch) };
+        cur->str = { str + 1, count_string(ch) };
 
         if( cur->kind == TOK_CHAR && cur->str.length() > 1 ) {
           Error::append(cur, "character literal is too long");

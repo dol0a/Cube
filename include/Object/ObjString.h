@@ -15,5 +15,11 @@ namespace Cube {
     {
       type = TYPE_STRING;
     }
+
+    ObjString(std::wstring_view v)
+      : value(std::wstring(v))
+    {
+      type = TYPE_STRING;
+    }
   };
 }

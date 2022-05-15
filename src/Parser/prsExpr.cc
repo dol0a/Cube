@@ -41,6 +41,17 @@ namespace Cube {
         return x;
       }
 
+      case TOK_STRING: {
+        auto x = new AST::Value;
+        auto obj = new ObjString(cur->str);
+
+        x->token = cur;
+        x->value = obj;
+
+        next();
+        return x;
+      }
+
       case TOK_IDENT: {
         if( cur->next->str == L"(" ) {
           return prsCallFunc();
